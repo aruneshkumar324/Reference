@@ -1,0 +1,17 @@
+<h1>Welcome {{ user.get_username }}</h1>
+
+<h2>Here are your books checked out:</h2>
+
+{% if bookinstance_list %}
+
+    {% for book in bookinstance_list %}
+
+            <p>{{ book }}</p>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>You don't have taken any book yet.</p>
+    
+{% endif %}

@@ -1,0 +1,19 @@
+<h1>Contact</h1>
+
+<a href="{% url 'classroom:home' %}">Home</a>
+<a href="{% url 'classroom:thank_you' %}">Thank You</a>
+<a href="{% url 'classroom:contact' %}">Contact</a>
+<a href="{% url 'classroom:teacher' %}">Teacher</a>
+<a href="{% url 'classroom:teacher_list' %}">List Of Teacher</a>
+
+
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Submit" />
+
+</form>

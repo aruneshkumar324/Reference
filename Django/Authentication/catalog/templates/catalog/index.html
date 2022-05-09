@@ -1,0 +1,21 @@
+<h1>Book Details</h1>
+
+
+<p>Number of Book - {{ num_books }}</p>
+<p>Number of Intance - {{ num_instance }}</p>
+<p>Available Book - {{ num_instance_available }}</p>
+
+{% if user.is_authenticated %}
+
+    <h3>Welcome  {{ user.get_username }}</h3>
+
+    {% comment %} if you will not put next request.path then it will not redirect on home page and stay in logout page {% endcomment %}
+    <a href="{% url 'logout' %}?next={{ request.path }}">Log Out</a>
+
+{% else %}
+
+    <h3>Uou are not logged in</h3>
+
+    <a href="{% url 'login' %}?next={{ request.path }}">Login</a>
+
+{% endif %}

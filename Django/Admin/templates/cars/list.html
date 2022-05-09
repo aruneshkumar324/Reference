@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+
+<div class="container">
+
+    {% if cars %}
+
+    <ul>
+        {% for car in cars %}
+            <li>{{ car }} - <a href="{% url 'cars:delete_entry' car.id %}">DELETE</a></li>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+
+    <h2>List empty</h2>
+
+    {% endif %}
+
+</div>
+
+
+
+{% endblock %}

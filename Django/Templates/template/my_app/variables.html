@@ -1,0 +1,68 @@
+<h1>Variables</h1>
+
+<p>First Name : {{ first_name  }}</p>
+<p>Last Name : {{ last_name }}</p>
+<p>Age : {{ age }}</p>
+
+<p>Friends : {{ friends }}</p>
+<p>Friends : {{ friends.0 }}</p>
+
+<p>Student : {{ student }}</p>
+<p>Student : {{ student.name }}</p>
+<p>Student : {{ student.USN }}</p>
+
+
+<!-- FILTER -->
+<h1>FILTER</h1>
+<p>First Name : {{ first_name | upper }}</p>
+<p>Last Name : {{ last_name | capfirst }}</p>
+<p>Last Name : {{ last_name | length }}</p>
+
+
+<!-- FOR LOOP -->
+<h1>FOR LOOP</h1>
+
+<ul>
+    {% for x in friends %}
+        <li>{{ x }}</li>
+    {% endfor %}
+</ul>
+
+
+<ul>
+    {% for x, y in student.items %}
+    <li>{{ x }} - {{ y }}</li>
+    {% endfor %}
+</ul>
+
+
+<!-- IF LOOP -->
+<h1>IF LOOP</h1>
+
+{% if user_logged_in %}
+    <h3>Welcome {{ first_name }}</h3>
+{% else %}
+    <h3>Please, Login</h3>
+{% endif %}
+
+
+<ul>
+    {% for x in num %}
+        {% if x == 2 %}
+            <li>Two</li>
+        {% else %}
+            <li>{{ x }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+
+{% if first_name == 'Arunesh' %}
+    <h4>Hello {{ first_name }}</h4>
+{% endif %}
+
+
+
+
+<p><a href="{% url 'my_app:home' %}">Home</a></p>
+<p><a href="{% url 'my_app:variables' %}">Variables</a></p>
